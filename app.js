@@ -7,3 +7,5 @@ console.log(gameCells)
 firstCell.addEventListener('click', () => {
     console.log('click')
 })
+
+//the
