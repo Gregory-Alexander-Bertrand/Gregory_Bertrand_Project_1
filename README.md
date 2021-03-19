@@ -10,7 +10,7 @@
 
 ### Game Rules
 
-### Size of grid is yet to be determined, but both the computer and the player will have a fleet of five ships: Aircraft Carrier, Battleship, Destroyer and Cruiser. From largest to smallest the ships size will be Aircraft Carrier to Cruiser. At the start the player chooses where to put their ships while the computer puts its ships at random. Once the ships are placed, the game begins. It's played on a turn by turn basis, so the player goes first, declaring its choice by clicking somewhere on the grid. If it's a miss, the turn will be registered as a miss, if it's a hit, the turn will register as a hit. The same rules apply for the computer. The end of the game occurs when one side has lost its entire fleet of ships, or one side runs out of ammo(will explain in stretch goals.
+#### Size of grid is yet to be determined, but both the computer and the player will have a fleet of five ships: Aircraft Carrier, Battleship, Destroyer and Cruiser. From largest to smallest the ships size will be Aircraft Carrier to Cruiser. At the start the player chooses where to put their ships while the computer puts its ships at random. Once the ships are placed, the game begins. It's played on a turn by turn basis, so the player goes first, declaring its choice by clicking somewhere on the grid. If it's a miss, the turn will be registered as a miss, if it's a hit, the turn will register as a hit. The same rules apply for the computer. The end of the game occurs when one side has lost its entire fleet of ships, or one side runs out of ammo(will explain in stretch goals.
 
 ### MVP
 
