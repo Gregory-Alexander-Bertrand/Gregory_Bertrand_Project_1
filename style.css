@@ -21,7 +21,7 @@ h1 {
 .player-grid {
     background-color: #0000ff;
     height: 572px;
-    width: 600px;
+    width: 450px;
     margin: 20px 20px;
     display: flex;
     flex-wrap: nowrap;
@@ -45,11 +45,11 @@ h1 {
 
 .computer-grid {
     background-color: #0000ff;
-    height: 600px;
-    width: 600px;
+    height: 572px;
+    width: 450px;
     margin: 20px 20px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .message-container {
