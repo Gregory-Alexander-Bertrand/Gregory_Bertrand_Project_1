@@ -1,11 +1,21 @@
 //console.log('test12321')
-const gameCells = Array.from(document.getElementsByClassName('cell'));
-const firstCell = document.getElementById('A1');
-console.log(firstCell)
-console.log(gameCells)
+const playerCells = Array.from(document.getElementsByClassName('cell-player'));
+const computerCells = Array.from(document.getElementsByClassName('cell'));
+let playerNavy
+let computerNavy 
 
-firstCell.addEventListener('click', () => {
-    console.log('click')
+console.log(computerCells)
+console.log(playerCells)
+
+
+//The player can select any of the squares on the computer's board.
+computerCells.forEach((cell, index) => {
+    cell.addEventListener('click', () => {
+        cell.classList.add('active')
+    })
 })
+//The computer picks a random cell on the board to declare as hit.
+let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)].classList.toggle('active')
 
-//the
+console.log(randomPlayerCells)
+

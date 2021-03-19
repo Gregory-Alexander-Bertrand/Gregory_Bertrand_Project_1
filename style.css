@@ -33,8 +33,7 @@ h1 {
     height: 100%;
 }
 
-.cell {
-    background-color: #00ffff;
+.cell, .cell-na, .cell-player {
     height: 50px;
     width: 100%;
     border: 1px solid #fffafa;
@@ -42,6 +41,15 @@ h1 {
     align-items: center;
     justify-content: center;
 }
+
+.cell:hover {
+    background-color: #ff0000;
+}
+
+.active {
+    background-color: red;
+}
+
 
 .computer-grid {
     background-color: #0000ff;
@@ -57,4 +65,12 @@ h1 {
     width: 50%;
     height: 200px;
     margin-left: 25%;
+}
+
+.box {
+    border: 2px solid #fffafa;
+    background-color: #f5deb3;
+    padding: 10px;
+    border-radius: .3rem;
+    cursor: move;
 }
