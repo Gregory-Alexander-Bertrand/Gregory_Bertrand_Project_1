@@ -2,6 +2,7 @@
 const playerCells = Array.from(document.getElementsByClassName('cell-player'));
 const computerCells = Array.from(document.getElementsByClassName('cell'));
 //Class constructor to make ships for fleets of computer and player
+// console.log(playerCells)
 class Ship {
     constructor(name, length){
         this.name = name;
@@ -19,14 +20,15 @@ class Ship {
 // }
 
 class Fleet {
-    constructor(detail, size){
-        this.detail = [{'name': 'aircraft carrier', 'lenght': 5},
-                        {'name': 'battleship', 'length': 4},
-                        {'name': 'destroyer', 'length': 3},
-                        { 'name': 'cruiser', 'length': 2}];
-        this.size = this.detail.length;
+    constructor(name, size){
+        this.name = name
+        this.size = size
     }
 }
+const battleship = new Fleet('battleship', 4)
+const aircraftCarrier = new Fleet('aircraft carrier', 5)
+const destroyer = new Fleet('destroyer', 3)
+const cruiser = new Fleet('cruiser', 2)
 
 console.log(Fleet)
 
@@ -59,9 +61,4 @@ let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.lengt
 
 console.log(randomPlayerCells)
 
-
-const launchComputerFleet = () => {
-    let shipOrientation = Math.floor(Math.random() * Ship.length)
-    let currentOrientation = 
-}
 
