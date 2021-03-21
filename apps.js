@@ -79,22 +79,22 @@ rowJ.forEach((row, index) => {
 let navalFleet = [
     {
         'name': 'carrier',
-        'position': [0, 0, 0, 0, 0],
+        'position': [B4, C4, D4, E4, F4],
         'strikes': ['', '', '', '', '']
     },
     {
         'name': 'battleship',
-        'position': [0, 0, 0, 0],
+        'position': [A1, A2, A3, A4],
         'strikes': ['', '', '', '']
     },
     {
         'name': 'destroyer',
-        'position': [0, 0, 0],
+        'position': [B2, C2, D2],
         'strikes': ['', '', '']
     },
     {
         'name': 'cruiser',
-        'position': [0, 0],
+        'position': [D5, E5],
         'strikes': ['', '']
     }
 ]
@@ -113,5 +113,5 @@ const launchFleet = (navalFleet) => {
     }
 }
 
-console.log(navalFleet[0].name)
+console.log(navalFleet)
 
