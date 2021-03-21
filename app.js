@@ -32,8 +32,8 @@ console.log(Fleet)
 
 let playerFleet = new Fleet()
 let computerFleet = new Fleet()
-console.log(playerFleet)
-console.log(computerFleet)
+// console.log(playerFleet)
+// console.log(computerFleet)
 //Objects for ships
 let shipOne = new Ship('aircraft carrier', 5);
 let shipTwo = new Ship('battleship', 4);
@@ -41,10 +41,10 @@ let shipThree = new Ship('destroyer', 3)
 let shipFour = new Ship('cruiser', 2)
 //Array of ships.
 //let ships = [shipOne, shipTwo, shipThree, shipFour]
- console.log(shipOne)
- console.log(shipTwo)
- console.log(shipThree)
- console.log(shipFour)
+//  console.log(shipOne)
+//  console.log(shipTwo)
+//  console.log(shipThree)
+//  console.log(shipFour)
  //console.log(ships)
 
 
@@ -58,4 +58,10 @@ computerCells.forEach((cell, index) => {
 let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)].classList.toggle('active')
 
 console.log(randomPlayerCells)
+
+
+const launchComputerFleet = () => {
+    let shipOrientation = Math.floor(Math.random() * Ship.length)
+    let currentOrientation = 
+}
 
