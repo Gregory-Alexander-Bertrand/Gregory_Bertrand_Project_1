@@ -1,23 +1,14 @@
 //console.log('test12321')
 const playerCells = Array.from(document.getElementsByClassName('cell-player'));
 const computerCells = Array.from(document.getElementsByClassName('cell'));
-const computerFleet = ['carrier', 'battleship', 'destroyer', 'cruiser', 'frigate', 'submarine']
+let thePlayer = 'player'
+let gameOver = false
+let playerFleet = []
+const ships = ['carrier', 'battleship', 'destroyer', 'cruiser', 'frigate', 'submarine']
 
-console.log(computerCells)
-// for(let i =0; i < playerCells.length; i++){
-    
-// }
-//trying to put ships into array so I can loop through them with one Math.random function
-//Instead of what I'm doing below.
-// for(let i = 0; i < computerFleet.length; i++){
-//     computerFleet.forEach((cell, index) => {
-//         computerFleet.add
-//     })
-// }
 
-//for(let j =0; j < computerCells.length; j++){
-   //let randomCellSelector = computerCells[Math.floor(Math.random() * computerCells.length)].classList.toggle('active')
-//}
+
+
 
 // let carrier = computerCells[Math.floor(Math.random() * computerCells.length)].classList.add('hidden')
 // let battleship = computerCells[Math.floor(Math.random() * computerCells.length)].classList.add('hidden')
@@ -26,11 +17,9 @@ console.log(computerCells)
 // let frigate = computerCells[Math.floor(Math.random() * computerCells.length)].classList.add('hidden')
 // let submarine = computerCells[Math.floor(Math.random() * computerCells.length)].classList.add('hidden')
 
-// const computerGrid = document.querySelector('computer-grid')
-
-// computerGrid.addEventListener('click', () => {
-
-// })
+//The following 3 arrays corespond with the for loop below, each were randomized and joined together
+//So the for loop would spit out a random ID index that tell the location of the ships.
+//Tim Mok helped me with this.
 
 const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -45,70 +34,60 @@ for(let i =1;  i < 7; i++){
     //console.log(numbers[randomNumbers])
     
     let randomId = letters[randomLetters] + numbers[randomNumbers]
-    //console.log(randomId)
+    console.log(randomId)
 
     idLocations.push(randomId)
 
     document.querySelector(`#${randomId}`).classList.add('hidden')
+    
+    
 }
 
-idLocations.forEach((value) => {
-    document.getElementById('value').addEventListener('click', () => {
-        console.log(value, 'click')
+// idLocations.forEach((idLocation, randomId) => {
+//     randomId.addEventListener('click', () => {
+//         console.log(randomId, 'click')
+//     })
+// })
+const rowA = Array.from(document.getElementsByClassName('row-a'));
+rowA.forEach((row, index, cell) => {
+    row.addEventListener('click', () => {
+       document.querySelectorAll('.cell').classList.remove('hidden')
     })
 })
 
-console.log(idLocations)
 
-// let randomLetters = Math.floor(Math.random() * letters.length)
-// console.log(letters[randomLetters])
 
-// let randomNumbers = Math.floor(Math.random() * numbers.length)
-// console.log(numbers[randomNumbers])
+// randomId.addEventListener('click',(e) => {
+//     console.log('click')
+// })
 
-// let randomId = letters[randomLetters] + numbers[randomNumbers]
-// console.log(randomId)
-
-// computerCells.forEach((cell, index) => {
+// playerCells.forEach((cell, index) => {
 //     cell.addEventListener('click', () => {
 //         cell.classList.add('active')
 //     })
 // })
 
-// const randomCellSelector = () => {
-//     const rowA = Array.from(document.getElementsByClassName('row-a'))
-//     const randomIndex = Math.floor(Math.random() * rowA.length)
-//     rowA[randomIndex].classList.add('active')
-//     console.log(rowA)
+// for(let j = 1; j < 7; j++){
+//     playerCells.forEach((cell, index) => {
+//         cell.addEventListener('click', () => {
+//            if(playerCells.length < 6){
+//                cell.classList.add('active')
+//            }
+//         })
+//     })
 // }
 
-// const randomCellSelector = (cell) => {
-//     let row = document.body.offsetHeight-cell.clientHeight
-//     let column = document.body.offsetWidth-cell.clientWidth
-//     let randomRow = Math.floor(Math.random() * row)
-//     let randomCol = Math.floor(Math.random() * column)
+//I'm trying to make it so the player/user can only click six squares.
 
-// }
-// window.onload = function() {
-//     let square = document.createElement('p')
-//     document.body.appendChild('p')
-// }
+playerOptions = ['', '', '', '', '', '']
 
-const addShip = (cell) => {
-    const battleship = document.createElement('p').innerHTML = 'X'
-    document.body.appendChild(computerCells)
-}
-
-// let gameParameters = {
-//     playGridSize: 10,
-//     computerGridSize: 10,
-//     shipLength: 1,
-//     shipSunk: 0,
-
-//     fleet: [
-//         {positions: [0], hits: ['']},
-//         {positions: [0], hits: ['']},
-//         {positions: [0], hits: ['']},
-//         {positions: [0], hits: ['']}
-//     ]
-// }
+playerCells.forEach((cell, index) => {
+    cell.addEventListener('click', () => {
+        console.log('click')
+        if(playerOptions.length < 6){
+            cell.classList.add('active')
+        } else {
+            cell.classList.remove('active')
+        }
+    })
+})
