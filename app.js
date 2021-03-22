@@ -24,9 +24,11 @@ const ships = ['carrier', 'battleship', 'destroyer', 'cruiser', 'frigate', 'subm
 const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const idLocations = []
+const setAnswers = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6']
 
 
-for(let i =1;  i < 7; i++){
+//for(let i =1;  i < 7; i++){
+for(let i =0;  i < 6; i++){
     let randomLetters = Math.floor(Math.random() * letters.length)
     //console.log(letters[randomLetters])
     
@@ -38,56 +40,63 @@ for(let i =1;  i < 7; i++){
 
     idLocations.push(randomId)
 
-    document.querySelector(`#${randomId}`).classList.add('hidden')
+    // document.querySelector(`#${randomId}`).classList.add('hidden')
+    document.querySelector(`#${setAnswers[i]}`).classList.add('hidden')
     
     
 }
+
+document.querySelector('.computer-grid').addEventListener('click', () => {
+    console.log('you clicked the computer grid')
+    for(let g = 0; g < letters.length; g++){
+        const aId = 'A' + numbers[g]
+        const bId = 'B' + numbers[g]
+        const cId = 'C' + numbers[g]
+        const dId = 'D' + numbers[g]
+        const eId = 'E' + numbers[g]
+        const fId = 'F' + numbers[g]
+        const gId = 'G' + numbers[g]
+        const hId = 'H' + numbers[g]
+        const iId = 'I' + numbers[g]
+        const jId = 'J' + numbers[g]
+        if(document.getElementById(aId).classList.contains('hidden')){
+            console.log('you found me')
+            document.getElementById(aId).classList.remove('hidden')
+        }
+        
+    }
+})
+
 
 // idLocations.forEach((idLocation, randomId) => {
 //     randomId.addEventListener('click', () => {
 //         console.log(randomId, 'click')
 //     })
 // })
-const rowA = Array.from(document.getElementsByClassName('row-a'));
-rowA.forEach((row, index, cell) => {
-    row.addEventListener('click', () => {
-       document.querySelectorAll('.cell').classList.remove('hidden')
-    })
-})
 
-
+// removeEventListener.onclick = () => {
+//     const randomCell = document.querySelector('randomId')
+//     if(randomCell.classList.contains('red')){
+//         randomCell.classList.remove('red')
+//     }
+// }
 
 // randomId.addEventListener('click',(e) => {
 //     console.log('click')
 // })
 
-// playerCells.forEach((cell, index) => {
-//     cell.addEventListener('click', () => {
-//         cell.classList.add('active')
-//     })
-// })
+let playerTurns = 6
 
-// for(let j = 1; j < 7; j++){
-//     playerCells.forEach((cell, index) => {
-//         cell.addEventListener('click', () => {
-//            if(playerCells.length < 6){
-//                cell.classList.add('active')
-//            }
-//         })
-//     })
-// }
-
-//I'm trying to make it so the player/user can only click six squares.
-
-playerOptions = ['', '', '', '', '', '']
 
 playerCells.forEach((cell, index) => {
     cell.addEventListener('click', () => {
-        console.log('click')
-        if(playerOptions.length < 6){
+        if(playerTurns > 0){
             cell.classList.add('active')
-        } else {
-            cell.classList.remove('active')
+            playerTurns--  
         }
+        //cell.classList.add('active')
     })
 })
+
+
+
