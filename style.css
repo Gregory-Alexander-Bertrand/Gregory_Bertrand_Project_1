@@ -43,13 +43,16 @@ h1 {
 }
 
 .cell:hover {
+    background-color: #02028b;
+}
+
+.hidden {
     background-color: #ff0000;
 }
 
 .active {
-    background-color: red;
+    background-color: #740303;
 }
-
 
 .computer-grid {
     background-color: #0000ff;

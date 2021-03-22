@@ -20,7 +20,7 @@ const colSeven = Array.from(document.getElementsByClassName('col-7'))
 const colEight = Array.from(document.getElementsByClassName('col-8'))
 const colNine = Array.from(document.getElementsByClassName('col-9'))
 const colTen = Array.from(document.getElementsByClassName('col-10'))
-
+console.log(playerCells[99])
 //Event Listeners to grab each square in a row to make it playable
 //by either the computer or player once the ships are placed.
 rowA.forEach((row, index) => {
