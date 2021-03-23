@@ -57,16 +57,19 @@ for(let i =0;  i < 6; i++){
 //This is for finding the hidden ships on the board
 //The click will reveal them.
 const compCells = document.querySelectorAll('.cell');
-
+const idLocal = document.querySelectorAll(idLocations)
 for(let i = 0; i < compCells.length; i++){
     compCells[i].addEventListener('click', function(e) {
         //console.log('click')
         document.getElementById(this.id).classList.add('active');
-            if(this.id === idLocations){
-                console.log('hit')
-            } else if(this.id != idLocations){
-                console.log('miss')
-            }
+        // idLocal[i].addEventListener('click', () => {
+        //     console.log('click')
+        // })
+        //     if(this.id === idLocations){
+        //         console.log('hit')
+        //     } else if(this.id != idLocations){
+        //         console.log('miss')
+        //     }
     })
 }
 
@@ -136,9 +139,9 @@ playerCells.forEach((cell, index) => {
 })
 
 
-// let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)]
-//  console.log(randomPlayerCells)
+ let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)]
+  console.log(randomPlayerCells)
 
- for(let k = 0; k < playerCells.length; k++){
-     let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)].add.classList('active')
- }
+//  for(let k = 0; k < playerCells.length; k++){
+//      let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)].add.classList('active')
+//  }
