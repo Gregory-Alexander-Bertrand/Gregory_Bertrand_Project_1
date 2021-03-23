@@ -49,7 +49,7 @@ for(let i =0;  i < 6; i++){
 
      document.querySelector(`#${randomId}`).classList.add('hidden')
     //document.querySelector(`#${setAnswers[i]}`).classList.add('hidden')
-    
+    //console.log(idLocations)
     
 }
 
@@ -57,22 +57,23 @@ for(let i =0;  i < 6; i++){
 //This is for finding the hidden ships on the board
 //The click will reveal them.
 const compCells = document.querySelectorAll('.cell');
-const idLocal = document.querySelectorAll(idLocations)
 for(let i = 0; i < compCells.length; i++){
     compCells[i].addEventListener('click', function(e) {
         //console.log('click')
         document.getElementById(this.id).classList.add('active');
-        // idLocal[i].addEventListener('click', () => {
-        //     console.log('click')
-        // })
-        //     if(this.id === idLocations){
-        //         console.log('hit')
-        //     } else if(this.id != idLocations){
-        //         console.log('miss')
-        //     }
+        if(idLocations.some(id => id === this.id)){
+            console.log('hit')
+            console.log(compCells, this.id)
+        } else {
+            console.log('miss')
+        
+            console.log(e.target)
+        }
         enemyTurn()
     })
 }
+
+const idLocal = document.querySelectorAll(idLocations)
 
 const squareLocations = document.querySelectorAll('idLocations')
 //console.log(idLocations)
@@ -129,13 +130,13 @@ for(let j = 0; j < squareLocations.length; j++){
 let playerTurns = 6
 const enemyTurn = () => {
     let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)]
-  console.log('hit')
+  //console.log('hit')
   randomPlayerCells.classList.add('active')
 }
 playerCells.forEach((cell, index) => {
     cell.addEventListener('click', () => {
         if(playerTurns > 0){
-            cell.classList.add('active')
+            cell.classList.add('activated')
             playerTurns--  
     
         }

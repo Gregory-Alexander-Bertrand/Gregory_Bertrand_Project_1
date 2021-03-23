@@ -55,6 +55,10 @@ h1 {
     background-color: #ff0000;
 }
 
+.activated {
+    background-color: #740303;
+}
+
 .computer-grid {
     background-color: #0000ff;
     height: 572px;
