@@ -3,8 +3,15 @@ const playerCells = Array.from(document.getElementsByClassName('cell-player'));
 // const computerCells = Array.from(document.getElementsByClassName('cell'));
 let thePlayer = 'player'
 let gameOver = false
-let playerFleet = []
-const ships = ['carrier', 'battleship', 'destroyer', 'cruiser', 'frigate', 'submarine']
+let totalMoves = 0
+let playerMoves = 0
+let computerMoves = 0
+const whoseRound = document.querySelector('.message-container')
+console.log(whoseRound)
+// let playerFleet = []
+// const ships = ['carrier', 'battleship', 'destroyer', 'cruiser', 'frigate', 'submarine']
+const rowA = Array.from(document.getElementsByClassName('row-a'));
+console.log(rowA)
 
 
 
@@ -26,18 +33,18 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const idLocations = []
 const setAnswers = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6']
 
-
+//This pretty much assigns six random cells to contain a 'ship'
 //for(let i =1;  i < 7; i++){
 for(let i =0;  i < 6; i++){
     let randomLetters = Math.floor(Math.random() * letters.length)
     //console.log(letters[randomLetters])
-    
+    //Above randomizes letters below randomizes numbers
     let randomNumbers = Math.floor(Math.random() * numbers.length)
     //console.log(numbers[randomNumbers])
-    
+    //Below combines random letters and random numbers into a new array
     let randomId = letters[randomLetters] + numbers[randomNumbers]
     console.log(randomId)
-
+    //pushes stuff into a new array.
     idLocations.push(randomId)
 
      document.querySelector(`#${randomId}`).classList.add('hidden')
@@ -46,40 +53,56 @@ for(let i =0;  i < 6; i++){
     
 }
 
-// document.querySelector('.computer-grid').addEventListener('click', () => {
-//     console.log('you clicked the computer grid')
-//     for(let g = 0; g < letters.length; g++){
-//         const aId = 'A' + numbers[g]
-//         const bId = 'B' + numbers[g]
-//         const cId = 'C' + numbers[g]
-//         const dId = 'D' + numbers[g]
-//         const eId = 'E' + numbers[g]
-//         const fId = 'F' + numbers[g]
-//         const gId = 'G' + numbers[g]
-//         const hId = 'H' + numbers[g]
-//         const iId = 'I' + numbers[g]
-//         const jId = 'J' + numbers[g]
-//         if(document.getElementById(aId).classList.contains('hidden')){
-//             console.log('you found me')
-//             document.getElementById(aId).classList.remove('hidden')
-//         } else if(document.getElementById(bId).classList.contains('hidden')){
-//             document.getElementById(bId).classList.remove('hidden')
-//         }
-//     }
-// })
 
+//This is for finding the hidden ships on the board
+//The click will reveal them.
 const compCells = document.querySelectorAll('.cell');
 
 for(let i = 0; i < compCells.length; i++){
     compCells[i].addEventListener('click', function(e) {
-        console.log('click')
-        document.getElementById(this.id).classList.remove('hidden');
+        //console.log('click')
+        document.getElementById(this.id).classList.add('active');
+            if(this.id === idLocations){
+                console.log('hit')
+            } else if(this.id != idLocations){
+                console.log('miss')
+            }
     })
 }
 
+const squareLocations = document.querySelectorAll('idLocations')
+//console.log(idLocations)
+for(let j = 0; j < squareLocations.length; j++){
+    //console.log(squareLocations)
+    if(document.getElementById(this.id).classList('hidden') === squareLocations){
+        console.log('hit')
+    } else if(document.getElementById(this.id).classList('hidden') != squareLocations){
+        console.log('miss')
+    }
+}
+// for(let j = 0; idLocations.length; j++){
+//     if(idLocations ===this.id){
+//         console.log('hit')
+//     } else if(idLocations != this.id){
+//         console.log('miss')
+//     }
+// }
 
-// let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)]
-// console.log(randomPlayerCells)
+// const gamePlay = (e) => {
+//     if(rowA = e.target.id === randomId){
+//         rowA.addEventListener('click', (e) => {
+//             console.log('hit')
+//         })
+//     }
+// }
+
+// for(let j = 0; j < rowA.length; j++){
+//    if(rowA[j].classList('hidden')){
+//        console.log('hit')
+//    }
+// }
+
+
 
 
     
@@ -89,26 +112,15 @@ for(let i = 0; i < compCells.length; i++){
 
     //let timerId = setInterval(() => console.log('tick'), 2000);
 
-    setInterval(function () {
-        let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)]
-    }, 3000)
-    //console.log(randomPlayerCells)
-// idLocations.forEach((idLocation, randomId) => {
-//     randomId.addEventListener('click', () => {
-//         console.log(randomId, 'click')
-//     })
-// })
+    // setInterval(function () {
+    //     let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)]
+    // }, 3000)
 
-// removeEventListener.onclick = () => {
-//     const randomCell = document.querySelector('randomId')
-//     if(randomCell.classList.contains('red')){
-//         randomCell.classList.remove('red')
-//     }
+    
+// for(let j = 0; j < playerCells.length; j++){
+//     playerCells[Math.floor(Math.random() * playerCells)]
+//     console.log(playerCells)
 // }
-
-// randomId.addEventListener('click',(e) => {
-//     console.log('click')
-// })
 
 let playerTurns = 6
 
@@ -124,8 +136,9 @@ playerCells.forEach((cell, index) => {
 })
 
 
+// let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)]
+//  console.log(randomPlayerCells)
 
-const gameLogic = () => {
-    if(gameOver) 
-    console.log(gameLogic)
-}
+ for(let k = 0; k < playerCells.length; k++){
+     let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)].add.classList('active')
+ }
