@@ -70,6 +70,7 @@ for(let i = 0; i < compCells.length; i++){
         //     } else if(this.id != idLocations){
         //         console.log('miss')
         //     }
+        enemyTurn()
     })
 }
 
@@ -126,21 +127,27 @@ for(let j = 0; j < squareLocations.length; j++){
 // }
 
 let playerTurns = 6
-
-
+const enemyTurn = () => {
+    let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)]
+  console.log('hit')
+  randomPlayerCells.classList.add('active')
+}
 playerCells.forEach((cell, index) => {
     cell.addEventListener('click', () => {
         if(playerTurns > 0){
             cell.classList.add('active')
             playerTurns--  
+    
         }
         //cell.classList.add('active')
     })
 })
 
 
- let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)]
-  console.log(randomPlayerCells)
+
+
+//  let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)]
+//   console.log(randomPlayerCells)
 
 //  for(let k = 0; k < playerCells.length; k++){
 //      let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)].add.classList('active')
