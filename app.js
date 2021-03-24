@@ -11,7 +11,7 @@ console.log(whoseRound)
 // let playerFleet = []
 // const ships = ['carrier', 'battleship', 'destroyer', 'cruiser', 'frigate', 'submarine']
 const rowA = Array.from(document.getElementsByClassName('row-a'));
-console.log(rowA)
+//console.log(rowA)
 
 
 
@@ -62,12 +62,11 @@ for(let i = 0; i < compCells.length; i++){
         //console.log('click')
         document.getElementById(this.id).classList.add('active');
         if(idLocations.some(id => id === this.id)){
-            console.log('hit')
-            console.log(compCells, this.id)
+            //console.log('hit')
+            document.querySelector('.message-container').innerHTML = 'player hit'
         } else {
-            console.log('miss')
-        
-            console.log(e.target)
+            //console.log('miss')
+            document.querySelector('.message-container').innerHTML = 'player miss'
         }
         enemyTurn()
     })
@@ -130,8 +129,10 @@ for(let j = 0; j < squareLocations.length; j++){
 let playerTurns = 6
 const enemyTurn = () => {
     let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)]
-  //console.log('hit')
+    
   randomPlayerCells.classList.add('active')
+  
+
 }
 playerCells.forEach((cell, index) => {
     cell.addEventListener('click', () => {
@@ -148,7 +149,7 @@ playerCells.forEach((cell, index) => {
 
 
 //  let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)]
-//   console.log(randomPlayerCells)
+
 
 //  for(let k = 0; k < playerCells.length; k++){
 //      let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)].add.classList('active')
