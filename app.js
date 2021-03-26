@@ -1,6 +1,7 @@
 //console.log('test12321')
 const playerCells = Array.from(document.getElementsByClassName('cell-player'));
 // const computerCells = Array.from(document.getElementsByClassName('cell'));
+//console.log(playerCells)
 let thePlayer = 'player'
 let gameOver = false
 let totalMoves = 0
@@ -11,7 +12,7 @@ console.log(whoseRound)
 // let playerFleet = []
 // const ships = ['carrier', 'battleship', 'destroyer', 'cruiser', 'frigate', 'submarine']
 const rowA = Array.from(document.getElementsByClassName('row-a'));
-//console.log(rowA)
+//console.log(rowA))
 
 
 
@@ -32,6 +33,7 @@ const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const idLocations = []
 const setAnswers = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6']
+//console.log(setAnswers)
 
 //This pretty much assigns six random cells to contain a 'ship'
 //for(let i =1;  i < 7; i++){
@@ -134,6 +136,15 @@ const enemyTurn = () => {
   
 
 }
+
+const greekLetters = ['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa']
+//console.log(greekLetters)
+const newNumbers = [1, 2, 3, 4, 5, 6, 7 ,8, 9, 10]
+//console.log(newNumbers)
+
+
+//console.log(playerShipsPositons)
+//console.log(playerShipsPositons)
 playerCells.forEach((cell, index) => {
     cell.addEventListener('click', () => {
         if(playerTurns > 0){
@@ -145,11 +156,32 @@ playerCells.forEach((cell, index) => {
     })
 })
 
+// const restartBtn = document.querySelector('.restart')
+// console.log(restartBtn)
 
+function restartGame(){
+    let playerTurns = 0
+    const allActive = document.querySelectorAll('.active')
+    const allActivated = document.querySelectorAll('.activated')
+    console.log(allActive)
+    allActive.forEach(el => {
+        el.classList.remove('active')
+    })
+    console.log(allActive)
+    allActivated.forEach(el => {
+        el.classList.remove('activated')
+    })
+    console.log(allActive)
+    window.onload = (e) => {
+        restartGame()
+    }
+}
 
-
+// restartBtn.addEventListener('click', function(){
+//     console.log('click')
+// })
+document.querySelector('.restart').addEventListener('click', restartGame)
 //  let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)]
-
 
 //  for(let k = 0; k < playerCells.length; k++){
 //      let randomPlayerCells = playerCells[Math.floor(Math.random() * playerCells.length)].add.classList('active')
